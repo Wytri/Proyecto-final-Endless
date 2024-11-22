@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bknc3gcysyx8e"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_2dbi8"]
+[ext_resource type="Texture2D" uid="uid://ccjauafko4eam" path="res://Spritesbase/Boceto_ply.png" id="2_87433"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_totar"]
+radius = 8.0
+height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7lp6"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2dbi8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(0.380952, 0.371648)
+texture = ExtResource("2_87433")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_totar")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(26, -7)
+shape = SubResource("RectangleShape2D_u7lp6")
+debug_color = Color(0.647059, 0.32549, 0.882353, 0.419608)
